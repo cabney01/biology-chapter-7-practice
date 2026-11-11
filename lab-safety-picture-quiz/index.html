@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lab Safety Picture Challenge | Mrs. Abney</title>
+<style>
+:root{--ink:#1c2d46;--blue:#2576af;--teal:#108f99;--light:#f0f8ff;--pink:#fbeaf4}*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 system-ui,Arial,sans-serif;color:var(--ink);background:linear-gradient(130deg,#ecf8ff,#fff5fb)}main{max-width:1000px;margin:auto;padding:24px 18px 80px}
+header{text-align:center;padding:26px 10px}h1{font-size:clamp(2rem,5vw,3.3rem);margin:.15em 0;color:#174f88}h2{margin:0 0 12px}p{margin:9px 0}
+.panel{background:white;border:1px solid #d4e4f0;border-radius:18px;padding:22px;margin:22px 0;box-shadow:0 5px 20px #173f5911}
+.note{background:#fff3cd;padding:12px 15px;border-radius:10px;border-left:4px solid #e6aa36}
+.fields{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}.fields label{display:block;font-weight:700}
+input,select{font:inherit;width:100%;padding:10px;border:1px solid #a6bfd2;border-radius:8px;background:white}
+.lab{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0}
+.person{position:relative;background:linear-gradient(160deg,#f9fcff,#eef6fa);border:2px solid #bdd9eb;border-radius:16px;text-align:center;padding:12px 8px;min-height:194px}
+.person .face{font-size:52px;display:block;line-height:1.2}.person .action{font-size:27px;display:block;height:35px}.person strong{display:block;font-size:19px;color:#165b84}.person small{font-size:13px;display:block;color:#3c5066}
+.person.unsafe{border-color:#e3b7b7}.person.safe{border-color:#abd7c6}
+.stage{border-radius:12px;background:#deedf7;text-align:center;padding:10px;margin-top:10px;font-weight:bold;color:#2d6481}
+.q{padding:20px 0;border-bottom:1px solid #dce8f1}.q:last-child{border:0}.q h3{font-size:18px;margin:0 0 12px}.options{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.option{display:flex;align-items:flex-start;gap:10px;border:1px solid #c4d7e6;border-radius:10px;padding:11px;cursor:pointer}
+.option:hover{background:#eff8fc}.option input{width:auto;margin-top:5px;accent-color:#178eaa}
+button{border:0;background:#17659b;color:white;padding:14px 24px;border-radius:10px;font:700 16px system-ui;cursor:pointer}
+button.secondary{background:#406579}button:disabled{opacity:.5;cursor:not-allowed}
+#result{display:none;border:3px solid #8ecbbb;text-align:center}#score{font-size:38px;font-weight:900;color:#166f82}
+@media(max-width:730px){.lab{grid-template-columns:repeat(2,1fr)}.fields,.options{grid-template-columns:1fr}}
+@media print{header,.fields,.lab,#questions,#submit,#actions,.note{display:none!important}body{background:white}main{padding:0}.panel{box-shadow:none}#result{display:block!important}}
+</style></head><body><main>
+<header><div>🧪 Mrs. Abney's Science Classes • 2026–2027</div><h1>Lab Safety Picture Challenge</h1><p>Study the illustrated lab scene, answer all 12 questions, and earn your score.</p><strong>12 questions • 1 point each • Automatic scoring</strong></header>
+<section class="panel"><h2>Student information</h2><div class="fields">
+<label>First and last name<input id="student" autocomplete="name" placeholder="First Last" required></label>
+<label>Class<select id="klass" required><option value="">Choose class</option><option>Honors Biology</option><option>Honors Chemistry</option><option>Environmental Science</option><option>Biology</option><option>Chemistry</option><option>Other Science</option></select></label>
+<label>Block / Period<input id="block" placeholder="e.g. 3rd Block" required></label></div>
+<p class="note"><strong>Important:</strong> This GitHub version grades your work on screen but does not automatically send your score to Mrs. Abney. After submitting, show your completed score to your teacher or print/save the score receipt according to her instructions.</p></section>
+<section class="panel"><h2>Step 1 — Inspect the Laboratory</h2><p>Look at the named students below. Their illustrated actions represent safe and unsafe laboratory choices.</p>
+<div class="stage">🔬 SCIENCE LAB • SAFETY FIRST • 🧯</div><div class="lab">
+<div class="person unsafe"><span class="face">👩🏽‍🔬</span><strong>Mia</strong><span class="action">🥽 ❌</span><small>Working without goggles</small></div>
+<div class="person unsafe"><span class="face">👨🏾‍🔬</span><strong>Jordan</strong><span class="action">🍔</span><small>Eating near chemicals</small></div>
+<div class="person unsafe"><span class="face">🏃🏽</span><strong>Carlos</strong><span class="action">🧪💨</span><small>Running with glassware</small></div>
+<div class="person unsafe"><span class="face">👩🏼‍🔬</span><strong>Ava</strong><span class="action">🔥💇</span><small>Loose hair near a burner; no goggles</small></div>
+<div class="person unsafe"><span class="face">👨🏻‍🔬</span><strong>Noah</strong><span class="action">👃🧪</span><small>Smelling directly from a test tube</small></div>
+<div class="person unsafe"><span class="face">👩🏿‍🔬</span><strong>Lily</strong><span class="action">🧪➡️👤</span><small>Test tube pointed toward someone</small></div>
+<div class="person unsafe"><span class="face">👨🏼‍🔬</span><strong>Ethan</strong><span class="action">💧⚠️</span><small>A spill needs teacher assistance</small></div>
+<div class="person safe"><span class="face">👩🏻‍🔬</span><strong>Grace</strong><span class="action">🥽🧤🧪</span><small>Wearing PPE; pouring carefully</small></div>
+<div class="person safe"><span class="face">👨🏿‍🔬</span><strong>Marcus</strong><span class="action">🧹🔎</span><small>Brush and dustpan for broken glass</small></div>
+<div class="person safe"><span class="face">👩🏽‍🔬</span><strong>Sophia</strong><span class="action">🏷️🧪</span><small>Reading a chemical label</small></div>
+<div class="person safe"><span class="face">👨🏻‍🔬</span><strong>Daniel</strong><span class="action">🥽🔥🔧</span><small>Goggles and tongs for hot glassware</small></div>
+<div class="person safe"><span class="face">👩‍🏫</span><strong>Teacher</strong><span class="action">🧯📋</span><small>Supervising lab safety</small></div>
+</div><p><em>Illustration recreated for the GitHub version; it is not the original picture from the blocked site.</em></p></section>
+<section class="panel"><h2>Step 2 — Choose the Best Answer</h2><p id="progress">0 of 12 answered</p><div id="questions"></div><p id="missing" role="status"></p><button id="submit" onclick="grade()">Submit for my score</button></section>
+<section id="result" class="panel" aria-live="polite"><h2>Lab Safety Score Receipt</h2><div id="score"></div><p id="who"></p><p id="date"></p><p id="message"></p><p>Show this receipt to Mrs. Abney as directed.</p><div id="actions"><button onclick="window.print()">Print / Save PDF</button> <button class="secondary" onclick="location.reload()">Retake Quiz</button></div></section>
+<footer style="text-align:center;color:#536c81">Lab Safety Day • Mrs. Abney • 2026–2027</footer></main>
+<script>
+const quiz=[
+["Which safety rule is Mia breaking?",["Her beaker is too small.","She is too close to the sink.","She needs safety goggles.","Mia is following every rule."],2],
+["What is Jordan doing that is unsafe?",["Reading a food label","Eating is not allowed in the lab.","Standing beside a lab table","Using the wrong chair"],1],
+["Why is Carlos's behavior unsafe?",["His apron is loose.","The flask looks empty.","He is moving away from the sink.","He is running with glassware."],3],
+["What should Ava do before continuing her experiment?",["Tie back her hair and put on goggles.","Turn the flame higher.","Remove her apron.","Move closer to the burner."],0],
+["What is the correct way for Noah to smell a chemical?",["Smell directly from the tube.","Ask a classmate to smell it.","Waft the vapors toward his nose.","Hold it closer to his face."],2],
+["Which rule is Lily breaking?",["She is using a clamp.","The test tube points toward a person.","She is near the sink.","The liquid is orange."],1],
+["What should Ethan do about the spill?",["Cover it with paper.","Ignore it until class ends.","Use his bare hands.","Tell the teacher and keep others away."],3],
+["Which statement about Grace is correct?",["She is using PPE and pouring carefully.","Gloves are never allowed.","She should pour above eye level.","She should remove her goggles."],0],
+["Why is Marcus using a brush and dustpan?",["The floor needs daily sweeping.","He wants to hide the glass.","Broken glass should not be touched by hand.","Cleaning is against the rules."],2],
+["Which safe habit is Sophia demonstrating?",["Leaving bottles open","Reading the chemical label first","Mixing without directions","Removing her goggles"],1],
+["Which safety rule is Daniel following?",["Holding hot glass by hand","Tasting a chemical","Pointing the tube at himself","Using tongs and wearing goggles"],3],
+["Which group contains only students modeling safe behavior?",["Mia, Jordan, Carlos, and Ava","Noah, Lily, Ethan, and Jordan","Grace, Marcus, Sophia, and Daniel","Carlos, Grace, Ava, and Ethan"],2]
+];
+const container=document.getElementById('questions');
+quiz.forEach((q,i)=>{const div=document.createElement('div');div.className='q';const title=document.createElement('h3');title.textContent=(i+1)+'. '+q[0];div.appendChild(title);const opts=document.createElement('div');opts.className='options';q[1].forEach((o,j)=>{const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='q'+i;input.value=j;input.addEventListener('change',progress);label.append(input,document.createTextNode(o));opts.appendChild(label)});div.appendChild(opts);container.appendChild(div)});
+function progress(){const n=quiz.filter((_,i)=>document.querySelector('input[name="q'+i+'"]:checked')).length;document.getElementById('progress').textContent=n+' of 12 answered';}
+function grade(){let n=document.getElementById('student').value.trim(), k=document.getElementById('klass').value, b=document.getElementById('block').value.trim(), missing=document.getElementById('missing');if(!n||!k||!b){missing.textContent='Please enter your name, class, and block before submitting.';return}const answers=quiz.map((_,i)=>document.querySelector('input[name="q'+i+'"]:checked'));if(answers.some(x=>!x)){missing.textContent='Please answer all 12 questions before submitting.';return}missing.textContent='';const score=answers.reduce((sum,a,i)=>sum+(Number(a.value)===quiz[i][2]?1:0),0);document.getElementById('score').textContent=score+' / 12 ('+Math.round(score/12*100)+'%)';document.getElementById('who').textContent=n+' • '+k+' • '+b;document.getElementById('date').textContent='Completed: '+new Date().toLocaleString();document.getElementById('message').textContent=score===12?'Excellent work! You identified all the safety choices.':'Review laboratory safety rules and discuss any mistakes with your teacher.';document.getElementById('result').style.display='block';document.getElementById('submit').disabled=true;document.querySelectorAll('input[type=radio]').forEach(i=>i.disabled=true);document.getElementById('result').scrollIntoView({behavior:'smooth'});}
+</script></body></html>
